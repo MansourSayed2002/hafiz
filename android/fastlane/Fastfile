@@ -1,0 +1,19 @@
+
+default_platform(:android)
+
+platform :android do
+  desc "Quran_App"
+  lane :firebaseappdistribution do
+    sh "flutter clean"
+    sh "flutter build apk --release"
+  firebase_app_distribution(
+    app: "1:843464134175:android:371ac9d74083586a00cf2a",
+    firebase_cli_token: "1//036QyGJ1k8EqJCgYIARAAGAMSNwF-L9Irf8N782LS5GIOHs3PxCQG9YIiekXXG954pAE0fnAbKS1D56alG7CR2wLLGmn4ZxYrONs",
+    android_artifact_type: "APK",
+    android_artifact_path: "E:../build/app/outputs/flutter-apk/app-release.apk",
+    testers: "mansourmans136@gmail.com",
+    release_notes: "The varsion one from quran app"
+  )
+  end
+
+end
