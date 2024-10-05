@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quran/Presentation/view/screen/quran/reading_quran_view.dart';
+import 'package:quran/core/constant/routes/routes.dart';
 import 'package:quran/core/routing/routing.dart';
 import 'package:quran/core/theme/color/color.dart';
 
@@ -19,9 +19,9 @@ class QuarnApp extends StatelessWidget {
               primaryColor: ColorApp.primary,
               scaffoldBackgroundColor: ColorApp.white,
             ),
-            home: const ReadingQuranView(),
-            // initialRoute: Routes.onboarding,
-            // onGenerateRoute: routingapp.generateroute,
+            // home: const TestView2(),
+            initialRoute: Routes.onboarding,
+            onGenerateRoute: routingapp.generateroute,
           );
         });
   }

@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quran/Presentation/view/Widget/home/CustomcontainerClippath.dart';
+import 'package:quran/Presentation/view/screen/reading_quran/reading_quran_view.dart';
+import 'package:quran/core/class/navigation_app.dart';
 import 'package:quran/core/constant/images/images.dart';
 import 'package:quran/core/constant/string/string.dart';
+import 'package:quran/core/function/sharedpre.dart';
 import 'package:quran/core/theme/color/color.dart';
 import 'package:quran/core/theme/textstyle/textstyle.dart';
 import 'package:quran/core/widget/Custombuttom.dart';
@@ -52,14 +55,19 @@ class LastReadSite extends StatelessWidget {
           top: 80.0.h,
           left: 40.0.h,
           child: Text(
-            'الفاتحه',
+            '${searchsharedprestring('namesurah')}',
             style: TextstyleApp.white25blod,
           ),
         ),
         Positioned(
           top: 100.0.h,
           left: 30.0.h,
-          child: const Custombuttom(
+          child: Custombuttom(
+            ontap: () {
+              context.push(ReadingQuranView(
+                indexpage: searchsharedpreint('numberpage'),
+              ));
+            },
             title: StringApp.continu,
             iconData: CupertinoIcons.arrow_right,
           ),

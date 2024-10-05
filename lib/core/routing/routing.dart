@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quran/Presentation/view/screen/home/home_view.dart';
 import 'package:quran/Presentation/view/screen/onboarding/onboardingview.dart';
-import 'package:quran/Presentation/view/screen/quran/reading_quran_view.dart';
+import 'package:quran/Presentation/view/screen/praise/praise_view.dart';
+import 'package:quran/Presentation/view/screen/quran/quran_view.dart';
+import 'package:quran/Presentation/view/screen/reading_quran/reading_quran_view.dart';
 import 'package:quran/core/constant/routes/routes.dart';
 
 class Routingapp {
@@ -17,7 +19,17 @@ class Routingapp {
         );
       case Routes.readingquran:
         return MaterialPageRoute(
-          builder: (_) => const ReadingQuranView(),
+          builder: (_) => ReadingQuranView(
+            indexpage: ModalRoute.of(_)!.settings.arguments as int,
+          ),
+        );
+      case Routes.praise:
+        return MaterialPageRoute(
+          builder: (_) => const PraiseView(),
+        );
+      case Routes.quran:
+        return MaterialPageRoute(
+          builder: (_) => const QuranView(),
         );
       default:
         return MaterialPageRoute(

@@ -1,6 +1,6 @@
 import 'package:quran/Data/Api/quran_api.dart';
 import 'package:quran/Data/Model/ayahmodel.dart';
-import 'package:quran/Data/Model/quranmodel.dart';
+import 'package:quran/Data/Model/surahmodel.dart';
 import 'package:quran/Domain/Abstractpre/abstract_getquran.dart';
 
 class GetquranRepo extends AbstractGetquranPreo {
@@ -10,10 +10,9 @@ class GetquranRepo extends AbstractGetquranPreo {
   getDataQuran() async {
     var response = await quranApi.getquran();
     List data = [];
-    List<QuranModel> qurans = [];
-    
-    data.add(response);
-    qurans.addAll(data.map((e) => QuranModel.fromJson(e)));
+    List<Surahs> qurans = [];
+    data.addAll(response['data']['surahs']);
+    qurans.addAll(data.map((e) => Surahs.fromJson(e)));
     return qurans;
   }
 

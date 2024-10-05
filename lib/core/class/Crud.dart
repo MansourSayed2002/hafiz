@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:quran/Data/Api/dio_factory.dart';
+import 'package:quran/core/class/api_status.dart';
+import 'package:quran/core/constant/enum/state_app.dart';
 
 class Crud {
   Crud._();
@@ -11,12 +13,12 @@ class Crud {
       if (response.statusCode == 200 || response.statusCode == 201) {
         var responsebody = jsonDecode(response.toString());
         if (responsebody.isNotEmpty) {
-          return responsebody;
+          return ApiStatus.success(responsebody);
         } else {
-          print('empty');
+          return ApiStatus.failure(StatusApp.nodata);
         }
       } else {
-        print(response.statusCode);
+        return ApiStatus.failure(StatusApp.error);
       }
     } catch (error) {
       print(error);

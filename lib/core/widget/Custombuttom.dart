@@ -8,12 +8,15 @@ class Custombuttom extends StatelessWidget {
     super.key,
     required this.iconData,
     required this.title,
+    required this.ontap,
   });
   final IconData iconData;
   final String title;
+  final VoidCallback ontap;
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: ontap,
       child: Container(
         width: 150.0.w,
         margin: EdgeInsets.only(top: 25.0.r),

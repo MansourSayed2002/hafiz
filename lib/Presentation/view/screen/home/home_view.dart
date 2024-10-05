@@ -7,9 +7,14 @@ import 'package:quran/core/constant/string/string.dart';
 import 'package:quran/core/theme/color/color.dart';
 import 'package:quran/core/theme/textstyle/textstyle.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,10 +35,22 @@ class HomeView extends StatelessWidget {
               ))
         ],
       ),
-      body: const Custombody(),
+      body: RefreshIndicator(
+          onRefresh: () async {
+            setState(() {});
+          },
+          child: const Custombody()),
     );
   }
 }
+// class HomeView extends StatelessWidget {
+//   const HomeView({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return
+//   }
+// }
 
 class Custombody extends StatelessWidget {
   const Custombody({super.key});

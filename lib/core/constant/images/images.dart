@@ -4,4 +4,6 @@ class ImagesApp {
   static const String group = 'assets/images/Group.png';
   static const String group7 = 'assets/images/Object.png';
   static const String vector = 'assets/images/Vector.png';
+  static const String childmuslim =
+      'assets/images/muslim-child-character-reading-al-quran.png';
 }
