@@ -28,12 +28,6 @@ class CustomStyleAyah extends StatelessWidget {
                         "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيم", ''),
                 style: TextstyleApp.black21blodAmiri,
               ),
-              TextSpan(
-                text: allayah[i].numberInSurah.toString(),
-                style: TextstyleApp.black15normal.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               WidgetSpan(
                 alignment: PlaceholderAlignment.middle,
                 child: Container(
