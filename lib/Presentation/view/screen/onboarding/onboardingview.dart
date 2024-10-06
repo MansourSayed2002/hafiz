@@ -28,7 +28,7 @@ class Onboardingview extends StatelessWidget {
           ),
           Custombuttom(
             ontap: () {
-              context.pushNamedAndRemoveUntil(Routes.home, (route) => false);
+              context.pushReplacementNamed(Routes.readingquran);
             },
             title: StringApp.getstarted,
             iconData: CupertinoIcons.arrow_right,

@@ -17,14 +17,17 @@ class ReadingQuranView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getit<ReadingQuranCubit>()..getdata(),
-      child: Scaffold(
-        appBar: PreferredSize(
-            preferredSize: Size(MediaQuery.of(context).size.width, 100.0.h),
-            child: const CustomAppBar()),
-        body: const CustomBody(),
-      ),
-    );
+        create: (context) => getit<ReadingQuranCubit>()..getdata(),
+        child: Scaffold(
+          appBar: PreferredSize(
+              preferredSize: Size(MediaQuery.of(context).size.width, 100.0.h),
+              child: const CustomAppBar()),
+          body: InkWell(
+              onTap: () {
+                getit<ReadingQuranCubit>().navigationbar();
+              },
+              child: const CustomBody()),
+        ));
   }
 }
 

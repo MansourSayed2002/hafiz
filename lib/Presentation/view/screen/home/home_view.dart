@@ -1,56 +1,44 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quran/Presentation/Cubit/home_cubit/home_cubit.dart';
 import 'package:quran/Presentation/view/Widget/home/CustomPopural.dart';
 import 'package:quran/Presentation/view/Widget/home/LastReadSite.dart';
 import 'package:quran/core/constant/string/string.dart';
 import 'package:quran/core/theme/color/color.dart';
 import 'package:quran/core/theme/textstyle/textstyle.dart';
 
-class HomeView extends StatefulWidget {
+class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<HomeView> {
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: ColorApp.white,
-        elevation: 0.0,
-        centerTitle: true,
-        title: Text(
-          StringApp.hafiz,
-          style: TextstyleApp.black25blod,
+    return BlocProvider(
+      create: (context) => HomeCubit()..getdata(),
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: ColorApp.white,
+          elevation: 0.0,
+          centerTitle: true,
+          title: Text(
+            StringApp.hafiz,
+            style: TextstyleApp.black25blod,
+          ),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  CupertinoIcons.search,
+                  size: 30.0,
+                ))
+          ],
         ),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                CupertinoIcons.search,
-                size: 30.0,
-              ))
-        ],
+        body: const Custombody(),
       ),
-      body: RefreshIndicator(
-          onRefresh: () async {
-            setState(() {});
-          },
-          child: const Custombody()),
     );
   }
 }
-// class HomeView extends StatelessWidget {
-//   const HomeView({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return
-//   }
-// }
 
 class Custombody extends StatelessWidget {
   const Custombody({super.key});

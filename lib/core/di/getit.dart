@@ -5,6 +5,7 @@ import 'package:quran/Data/repo/getquran.dart';
 import 'package:quran/Domain/Abstractpre/abstract_getquran.dart';
 import 'package:quran/Domain/UseCase/getayahs.dart';
 import 'package:quran/Domain/UseCase/getquran.dart';
+import 'package:quran/Presentation/Cubit/home_cubit/home_cubit.dart';
 import 'package:quran/Presentation/Cubit/praise_cubit/praise_cubit.dart';
 import 'package:quran/Presentation/Cubit/quran_cubit/quran_cubit.dart';
 import 'package:quran/Presentation/Cubit/reading_cubit/reading_quran_cubit.dart';
@@ -24,4 +25,5 @@ Future<void> setupgetit() async {
       () => ReadingQuranCubit(getit(), getit()));
   getit.registerLazySingleton<QuranCubit>(() => QuranCubit(getit()));
   getit.registerLazySingleton<PraiseCubit>(() => PraiseCubit());
+  getit.registerLazySingleton<HomeCubit>(() => HomeCubit());
 }

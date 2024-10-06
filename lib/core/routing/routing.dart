@@ -19,9 +19,7 @@ class Routingapp {
         );
       case Routes.readingquran:
         return MaterialPageRoute(
-          builder: (_) => ReadingQuranView(
-            indexpage: ModalRoute.of(_)!.settings.arguments as int,
-          ),
+          builder: (_) => const ReadingQuranView(),
         );
       case Routes.praise:
         return MaterialPageRoute(

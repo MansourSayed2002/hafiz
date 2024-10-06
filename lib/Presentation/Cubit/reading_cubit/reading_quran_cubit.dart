@@ -18,11 +18,12 @@ class ReadingQuranCubit extends Cubit<ReadingQuranState> {
   late UseCaseGetayahs useCaseGetayahs;
   late PageController pageController;
 
-  late int currentindex;
+  int currentindex = 0;
   StatusApp statusApp = StatusApp.none;
   String? namesurah;
   List<Surahs> responsequran = [];
   List<AyahsModel> ayah = [];
+  bool isnavigationbar = false;
 
   static ReadingQuranCubit get(BuildContext context) {
     return BlocProvider.of(context);
@@ -56,7 +57,14 @@ class ReadingQuranCubit extends Cubit<ReadingQuranState> {
   }
 
   getindex(int index) {
-    currentindex = index;
+    if (currentindex != index) {
+      currentindex = index;
+      emit(ReadingQuranSuccess());
+    }
+  }
+
+  navigationbar() {
+    isnavigationbar == true ? isnavigationbar = false : isnavigationbar = true;
     emit(ReadingQuranSuccess());
   }
 }

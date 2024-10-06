@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quran/Presentation/Cubit/home_cubit/home_cubit.dart';
 import 'package:quran/Presentation/view/Widget/home/CustomcontainerClippath.dart';
 import 'package:quran/Presentation/view/screen/reading_quran/reading_quran_view.dart';
 import 'package:quran/core/class/navigation_app.dart';
@@ -54,9 +56,14 @@ class LastReadSite extends StatelessWidget {
         Positioned(
           top: 80.0.h,
           left: 40.0.h,
-          child: Text(
-            '${searchsharedprestring('namesurah')}',
-            style: TextstyleApp.white25blod,
+          child: BlocBuilder<HomeCubit, HomeState>(
+            builder: (context, state) {
+              var controller = HomeCubit.get(context);
+              return Text(
+                controller.namesurah,
+                style: TextstyleApp.white25blod,
+              );
+            },
           ),
         ),
         Positioned(
@@ -64,9 +71,11 @@ class LastReadSite extends StatelessWidget {
           left: 30.0.h,
           child: Custombuttom(
             ontap: () {
-              context.push(ReadingQuranView(
-                indexpage: searchsharedpreint('numberpage'),
-              ));
+              if (searchsharedpreint('numberpage') != null) {
+                context.push(ReadingQuranView(
+                  indexpage: searchsharedpreint('numberpage'),
+                ));
+              }
             },
             title: StringApp.continu,
             iconData: CupertinoIcons.arrow_right,

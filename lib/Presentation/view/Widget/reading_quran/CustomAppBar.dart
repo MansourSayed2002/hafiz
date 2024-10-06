@@ -60,7 +60,6 @@ class CustomAppBar extends StatelessWidget {
         BlocBuilder<ReadingQuranCubit, ReadingQuranState>(
           builder: (context, state) {
             var controller = ReadingQuranCubit.get(context);
-
             return Positioned(
               bottom: 10.0.h,
               right: 10.0.h,
