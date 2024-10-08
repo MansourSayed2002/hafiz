@@ -4,5 +4,6 @@ enum StatusApp {
   success,
   error,
   failure,
+  serverfailure,
   nodata,
 }

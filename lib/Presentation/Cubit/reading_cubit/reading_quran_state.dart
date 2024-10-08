@@ -8,3 +8,5 @@ abstract class ReadingQuranState {}
 final class ReadingQuranInitial extends ReadingQuranState {}
 
 class ReadingQuranSuccess extends ReadingQuranState {}
+
+class OfflineStatus extends ReadingQuranState {}

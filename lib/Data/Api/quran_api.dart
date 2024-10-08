@@ -7,7 +7,6 @@ class QuranApi {
 
   getquran() async {
     var response = await crud.getrequest(LinksApp.quran);
-
     return response;
   }
 }

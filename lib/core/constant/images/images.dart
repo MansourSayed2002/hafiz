@@ -6,4 +6,6 @@ class ImagesApp {
   static const String vector = 'assets/images/Vector.png';
   static const String childmuslim =
       'assets/images/muslim-child-character-reading-al-quran.png';
+
+  static const String offline = 'assets/images/offline.png';
 }

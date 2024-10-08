@@ -6,6 +6,7 @@ import 'package:quran/Presentation/Cubit/home_cubit/home_cubit.dart';
 import 'package:quran/Presentation/view/Widget/home/CustomPopural.dart';
 import 'package:quran/Presentation/view/Widget/home/LastReadSite.dart';
 import 'package:quran/core/constant/string/string.dart';
+import 'package:quran/core/di/getit.dart';
 import 'package:quran/core/theme/color/color.dart';
 import 'package:quran/core/theme/textstyle/textstyle.dart';
 
@@ -15,7 +16,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCubit()..getdata(),
+      create: (context) => getit<HomeCubit>()..getdata(),
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: ColorApp.white,

@@ -17,6 +17,8 @@ class HomeCubit extends Cubit<HomeState> {
 
   getdata() {
     namesurah = searchsharedprestring('namesurah');
-    emit(HomeInitial());
+    if (namesurah != searchsharedprestring('namesurah')) {
+      emit(HomeInitial());
+    }
   }
 }

@@ -21,7 +21,7 @@ class Crud {
         return ApiStatus.failure(StatusApp.error);
       }
     } catch (error) {
-      print(error);
+      return StatusApp.serverfailure;
     }
   }
 }

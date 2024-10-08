@@ -15,8 +15,6 @@ class HandlingDataView extends StatelessWidget {
         ? Center(child: Image.asset(Animated.loading))
         : statusApp == StatusApp.error
             ? Center(child: Lottie.asset(Animated.lottieserver404))
-            : statusApp == StatusApp.none
-                ? const Text('None')
-                : widget;
+            : widget;
   }
 }

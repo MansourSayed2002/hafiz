@@ -10,4 +10,5 @@ class StringApp {
   static const String continu = 'Continue';
   static const String elbasmala = "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ";
   static const String page = 'Page';
+  static const String checkinter = 'Please Check The Internet';
 }
